@@ -2,8 +2,6 @@
 Copyright (C) 2020-2021 Yigty.ORG; all rights reserved.
 Copyright (C) 2020-2021 Takym.
 
-![Takym](LOGO.png)
-
 [![Version](https://img.shields.io/badge/version-none-inactive)](https://github.com/YigtyORG/TakymLib/releases)
 [![License](https://img.shields.io/github/license/YigtyORG/Exyzer)](LICENSE.md)
 [![BuildTest](https://github.com/YigtyORG/Exyzer/workflows/BuildTest/badge.svg)](https://github.com/YigtyORG/Exyzer/actions/workflows/BuildTest.yml)
