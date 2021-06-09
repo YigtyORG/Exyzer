@@ -13,7 +13,7 @@ using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Jobs;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-#if RELEASE
+#if BENCHMARK
 using BenchmarkDotNet.Running;
 #endif
 
