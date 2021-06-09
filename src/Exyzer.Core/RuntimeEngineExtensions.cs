@@ -6,8 +6,8 @@
  * distributed under the MIT License.
 ****/
 
-using System;
 using System.Linq;
+using TakymLib;
 
 namespace Exyzer
 {
@@ -23,9 +23,7 @@ namespace Exyzer
 		/// <exception cref="System.ArgumentNullException"/>
 		public static IDevice[] GetConnectedDevices(this IRuntimeEngine runtimeEngine)
 		{
-			if (runtimeEngine is null) {
-				throw new ArgumentNullException(nameof(runtimeEngine));
-			}
+			runtimeEngine.EnsureNotNull(nameof(runtimeEngine));
 			return runtimeEngine.EnumerateConnectedDevices().ToArray();
 		}
 	}

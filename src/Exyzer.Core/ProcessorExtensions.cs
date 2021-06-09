@@ -8,6 +8,7 @@
 
 using System;
 using Exyzer.Properties;
+using TakymLib;
 
 namespace Exyzer
 {
@@ -26,9 +27,7 @@ namespace Exyzer
 		/// <exception cref="System.ArgumentException"/>
 		public static string GetRegisterName(this IProcessor processor, int index)
 		{
-			if (processor is null) {
-				throw new ArgumentNullException(nameof(processor));
-			}
+			processor.EnsureNotNull(nameof(processor));
 			if (processor.TryGetFormattedRegisterValue(index, ValueFormat.DisplayName, out string? result)) {
 				return result;
 			}
@@ -52,9 +51,7 @@ namespace Exyzer
 		/// <exception cref="System.ArgumentException"/>
 		public static string GetFormattedRegisterValue(this IProcessor processor, int index, ValueFormat format)
 		{
-			if (processor is null) {
-				throw new ArgumentNullException(nameof(processor));
-			}
+			processor.EnsureNotNull(nameof(processor));
 			if (processor.TryGetFormattedRegisterValue(index, format, out string? result)) {
 				return result;
 			}
@@ -75,9 +72,7 @@ namespace Exyzer
 		/// <exception cref="System.ArgumentException"/>
 		public static void SetFormattedRegisterValue(this IProcessor processor, int index, ValueFormat format, string? value)
 		{
-			if (processor is null) {
-				throw new ArgumentNullException(nameof(processor));
-			}
+			processor.EnsureNotNull(nameof(processor));
 			if (!processor.TrySetFormattedRegisterValue(index, format, value)) {
 				throw new ArgumentException(string.Format(
 					Resources.ProcessorExtensions_SetFormattedRegisterValue_ArgumentException,
