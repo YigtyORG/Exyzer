@@ -13,6 +13,7 @@
 		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 		<IsPackable>false</IsPackable>
 		<ServerGarbageCollection>true</ServerGarbageCollection>
+		<Configurations>Debug;Release;Benchmark</Configurations>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0" />
