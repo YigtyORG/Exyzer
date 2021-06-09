@@ -15,6 +15,8 @@ jobs:
         bc: [ Debug, Release ]
     steps:
     - uses: actions/checkout@v2.3.4
+    - name: Sync Submodules
+      run: git submodule sync --recursive
     - name: Setup .NET
       uses: actions/setup-dotnet@v1.8.0
       with:
