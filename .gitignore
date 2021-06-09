@@ -384,6 +384,3 @@ FodyWeavers.xsd
 
 # Local files
 /!L_*
-
-# Designer files
-*.designer.cs
