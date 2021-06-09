@@ -7,6 +7,7 @@
 ****/
 
 using System;
+using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Diagnosers;
@@ -111,6 +112,7 @@ namespace Exyzer.Tests
 			}
 		}
 
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private static byte[] CreateArray()
 		{
 			return new byte[0x10000];
