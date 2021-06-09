@@ -58,7 +58,7 @@ namespace Exyzer.Tests
 		}
 
 		[Benchmark()]
-		public void SetValue_MemoryDevice_Data()
+		public void SetValue_MemoryDevice_Data1()
 		{
 			var values = new MemoryDeviceMock(true, true, CreateArray());
 			for (int i = 0; i < values.Data.Length; ++i) {
@@ -67,11 +67,47 @@ namespace Exyzer.Tests
 		}
 
 		[Benchmark()]
+		public void SetValue_MemoryDevice_Data2()
+		{
+			var values = new MemoryDeviceMock(true, true, CreateArray());
+			var span   = values.Data;
+			for (int i = 0; i < span.Length; ++i) {
+				span[i] = ((byte)(i & 0xFF));
+			}
+		}
+
+		[Benchmark()]
 		public void SetValue_MemoryDevice_Output()
 		{
 			var values = new MemoryDeviceMock(true, true, CreateArray());
 			for (int i = 0; i < values.Data.Length; ++i) {
-				values.Output(i, ((byte)(i & 0xFF)));
+				values.Output(i, i & 0xFF);
+			}
+		}
+
+		[Benchmark()]
+		public void SetValue_MemoryDevice_Output1()
+		{
+			var values = new MemoryDeviceMock(true, true, CreateArray());
+			for (int i = 0; i < values.Data.Length; ++i) {
+				int address = i;
+				int data    = i & 0xFF;
+				if (values.CanWrite) {
+					if (address < 0) {
+						_ = IOResult.OutOfRange;
+					}
+					var span = values.Data;
+					if (address >= span.Length - 4) {
+						_ = IOResult.OutOfRange;
+					}
+					if (BitConverter.TryWriteBytes(span[address..], data)) {
+						_ = IOResult.Success;
+					} else {
+						_ = IOResult.Failed;
+					}
+				} else {
+					_ = IOResult.AccessDenied;
+				}
 			}
 		}
 
