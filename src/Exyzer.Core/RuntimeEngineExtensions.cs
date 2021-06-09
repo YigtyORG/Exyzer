@@ -20,6 +20,7 @@ namespace Exyzer
 		///  接続された全ての外部装置を取得します。
 		/// </summary>
 		/// <returns><see cref="Exyzer.IDevice"/>の配列を返します。</returns>
+		/// <exception cref="System.ArgumentNullException"/>
 		public static IDevice[] GetConnectedDevices(this IRuntimeEngine runtimeEngine)
 		{
 			if (runtimeEngine is null) {
