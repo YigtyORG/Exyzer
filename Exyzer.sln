@@ -35,6 +35,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{4E9EDF31-7F0B-4B92-84CA-76D422434B90}"
 	ProjectSection(SolutionItems) = preProject
+		.github\workflows\Benchmark.yml = .github\workflows\Benchmark.yml
 		.github\workflows\BuildTest.yml = .github\workflows\BuildTest.yml
 		.github\workflows\NuGet.yml = .github\workflows\NuGet.yml
 	EndProjectSection
@@ -59,7 +60,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{670C7330
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exyzer.Tests", "tests\Exyzer.Tests.csproj", "{7D205295-5268-4BCE-9CB6-13E5A8046527}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exyzer.Core", "src\Exyzer.Core\Exyzer.Core.csproj", "{A7817DB8-AD89-457F-9055-D4A3B76BC0AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exyzer.Core", "src\Exyzer.Core\Exyzer.Core.csproj", "{A7817DB8-AD89-457F-9055-D4A3B76BC0AD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exyzer.Documentation", "docs\Exyzer.Documentation.csproj", "{75EECFF0-A349-48F4-A4F3-F2CCC326FC2B}"
 EndProject
@@ -69,22 +70,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TakymLib", "lib\TakymLib\sr
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Benchmark|Any CPU = Benchmark|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D205295-5268-4BCE-9CB6-13E5A8046527}.Benchmark|Any CPU.ActiveCfg = Release|Any CPU
+		{7D205295-5268-4BCE-9CB6-13E5A8046527}.Benchmark|Any CPU.Build.0 = Release|Any CPU
 		{7D205295-5268-4BCE-9CB6-13E5A8046527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7D205295-5268-4BCE-9CB6-13E5A8046527}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D205295-5268-4BCE-9CB6-13E5A8046527}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D205295-5268-4BCE-9CB6-13E5A8046527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7817DB8-AD89-457F-9055-D4A3B76BC0AD}.Benchmark|Any CPU.ActiveCfg = Release|Any CPU
+		{A7817DB8-AD89-457F-9055-D4A3B76BC0AD}.Benchmark|Any CPU.Build.0 = Release|Any CPU
 		{A7817DB8-AD89-457F-9055-D4A3B76BC0AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A7817DB8-AD89-457F-9055-D4A3B76BC0AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7817DB8-AD89-457F-9055-D4A3B76BC0AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7817DB8-AD89-457F-9055-D4A3B76BC0AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75EECFF0-A349-48F4-A4F3-F2CCC326FC2B}.Benchmark|Any CPU.ActiveCfg = Release|Any CPU
+		{75EECFF0-A349-48F4-A4F3-F2CCC326FC2B}.Benchmark|Any CPU.Build.0 = Release|Any CPU
 		{75EECFF0-A349-48F4-A4F3-F2CCC326FC2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{75EECFF0-A349-48F4-A4F3-F2CCC326FC2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75EECFF0-A349-48F4-A4F3-F2CCC326FC2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75EECFF0-A349-48F4-A4F3-F2CCC326FC2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BE22BEF-6B86-4C6F-8A30-9A8F246B323A}.Benchmark|Any CPU.ActiveCfg = Benchmark|Any CPU
+		{2BE22BEF-6B86-4C6F-8A30-9A8F246B323A}.Benchmark|Any CPU.Build.0 = Benchmark|Any CPU
 		{2BE22BEF-6B86-4C6F-8A30-9A8F246B323A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2BE22BEF-6B86-4C6F-8A30-9A8F246B323A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BE22BEF-6B86-4C6F-8A30-9A8F246B323A}.Release|Any CPU.ActiveCfg = Release|Any CPU

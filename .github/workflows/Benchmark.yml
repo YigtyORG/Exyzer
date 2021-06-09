@@ -1,4 +1,4 @@
-name: "BuildTest"
+name: "Benchmark"
 
 on:
   push:
@@ -7,12 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  BuildTest:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ windows-latest, ubuntu-latest, macos-latest ]
-        bc: [ Debug, Release ]
+  Benchmark:
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2.3.4
     - name: Sync Submodules
@@ -25,7 +21,12 @@ jobs:
       run: dotnet restore Exyzer.sln
     # Build
     - name: Build
-      run: dotnet build -c ${{ matrix.bc }} --no-restore
+      run: dotnet build -c Benchmark --no-restore
     # Test
     - name: Test
-      run: dotnet test -c ${{ matrix.bc }} --no-build --verbosity normal
+      run: dotnet test -c Benchmark --no-build --verbosity normal
+    - name: Save Benchmarks Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: benchmarks-results
+        path: "**/BenchmarkDotNet.Artifacts/results/*"
