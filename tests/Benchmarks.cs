@@ -41,28 +41,28 @@ namespace Exyzer.Tests
 		}
 
 		[Benchmark()]
-		public byte CreateArray()
+		public byte CreateArrayAndGet()
 		{
 			var array = new byte[0x100];
 			return array[0];
 		}
 
 		[Benchmark()]
-		public byte CreateArrayAsSpan()
+		public byte CreateArrayAsSpanAndGet()
 		{
 			var span = new byte[0x100].AsSpan();
 			return span[0];
 		}
 
 		[Benchmark()]
-		public byte CreateSpan()
+		public byte CreateSpanAndGet()
 		{
 			Span<byte> span = stackalloc byte[0x100];
 			return span[0];
 		}
 
 		[Benchmark()]
-		public byte CreateMemoryDevice()
+		public byte CreateMemoryDeviceAndGet()
 		{
 			var memory = new MemoryDeviceMock(true, true, new byte[0x100]);
 			return memory.Data[0];
