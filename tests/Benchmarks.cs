@@ -90,9 +90,11 @@ namespace Exyzer.Tests
 		public void SetValue_Span2()
 		{
 			var values = CreateArray().AsSpan();
+			int i = 0;
 			while (values.Length > 0) {
 				values[0] = ((byte)(i & 0xFF));
 				values = values[1..];
+				++i;
 			}
 		}
 
