@@ -115,7 +115,7 @@ namespace Exyzer.Tests
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private static byte[] CreateArray()
 		{
-			return new byte[0x10000];
+			return new byte[0x0100];
 		}
 	}
 }
