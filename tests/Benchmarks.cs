@@ -41,6 +41,34 @@ namespace Exyzer.Tests
 		}
 
 		[Benchmark()]
+		public byte CreateArray()
+		{
+			var array = new byte[0x100];
+			return array[0];
+		}
+
+		[Benchmark()]
+		public byte CreateArrayAsSpan()
+		{
+			var span = new byte[0x100].AsSpan();
+			return span[0];
+		}
+
+		[Benchmark()]
+		public byte CreateSpan()
+		{
+			Span<byte> span = stackalloc byte[0x100];
+			return span[0];
+		}
+
+		[Benchmark()]
+		public byte CreateMemoryDevice()
+		{
+			var memory = new MemoryDeviceMock(true, true, new byte[0x100]);
+			return memory.Data[0];
+		}
+
+		[Benchmark()]
 		public void SetValue_Array()
 		{
 			byte[] values = CreateArray();
