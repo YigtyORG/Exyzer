@@ -41,6 +41,34 @@ namespace Exyzer.Tests
 		}
 
 		[Benchmark()]
+		public byte CreateArrayAndGet()
+		{
+			var array = new byte[0x100];
+			return array[0];
+		}
+
+		[Benchmark()]
+		public byte CreateArrayAsSpanAndGet()
+		{
+			var span = new byte[0x100].AsSpan();
+			return span[0];
+		}
+
+		[Benchmark()]
+		public byte CreateSpanAndGet()
+		{
+			Span<byte> span = stackalloc byte[0x100];
+			return span[0];
+		}
+
+		[Benchmark()]
+		public byte CreateMemoryDeviceAndGet()
+		{
+			var memory = new MemoryDeviceMock(true, true, new byte[0x100]);
+			return memory.Data[0];
+		}
+
+		[Benchmark()]
 		public void SetValue_Array()
 		{
 			byte[] values = CreateArray();
@@ -50,11 +78,23 @@ namespace Exyzer.Tests
 		}
 
 		[Benchmark()]
-		public void SetValue_Span()
+		public void SetValue_Span1()
 		{
 			var values = CreateArray().AsSpan();
 			for (int i = 0; i < values.Length; ++i) {
 				values[i] = ((byte)(i & 0xFF));
+			}
+		}
+
+		[Benchmark()]
+		public void SetValue_Span2()
+		{
+			var values = CreateArray().AsSpan();
+			int i = 0;
+			while (values.Length > 0) {
+				values[0] = ((byte)(i & 0xFF));
+				values = values[1..];
+				++i;
 			}
 		}
 
@@ -115,7 +155,7 @@ namespace Exyzer.Tests
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private static byte[] CreateArray()
 		{
-			return new byte[0x10000];
+			return new byte[0x0100];
 		}
 	}
 }
