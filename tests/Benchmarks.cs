@@ -78,11 +78,21 @@ namespace Exyzer.Tests
 		}
 
 		[Benchmark()]
-		public void SetValue_Span()
+		public void SetValue_Span1()
 		{
 			var values = CreateArray().AsSpan();
 			for (int i = 0; i < values.Length; ++i) {
 				values[i] = ((byte)(i & 0xFF));
+			}
+		}
+
+		[Benchmark()]
+		public void SetValue_Span2()
+		{
+			var values = CreateArray().AsSpan();
+			while (values.Length > 0) {
+				values[0] = ((byte)(i & 0xFF));
+				values = values[1..];
 			}
 		}
 
