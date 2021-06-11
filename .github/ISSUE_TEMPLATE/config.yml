@@ -1,3 +1,11 @@
+# ***********************************************************
+# * Exyzer                                                  *
+# * Copyright (C) 2020-2021 Yigty.ORG; all rights reserved. *
+# * Copyright (C) 2020-2021 Takym.                          *
+# *                                                         *
+# * distributed under the MIT License.                      *
+# ***********************************************************
+
 blank_issues_enabled: true
 contact_links:
   - name: How to Contribute
