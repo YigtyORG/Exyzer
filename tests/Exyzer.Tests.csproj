@@ -29,8 +29,8 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="BenchmarkDotNet" Version="0.13.0" />
-		<ProjectReference Include="../src/Exyzer.Core/Exyzer.Core.csproj">
-			<SetConfiguration Condition="'$(Configuration)'=='Benchmark'">Release</SetConfiguration>
-		</ProjectReference>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="../src/Exyzer.Core/Exyzer.Core.csproj" />
 	</ItemGroup>
 </Project>
