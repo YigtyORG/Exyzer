@@ -41,6 +41,20 @@ namespace Exyzer.Tests
 #endif
 		}
 
+		[TestMethod()]
+		public void ConfigurationTest()
+		{
+#if DEBUG
+			Assert.Fail("Debug  " + Config.Get());
+#elif RELEASE
+			Assert.Fail("Release  " + Config.Get());
+#elif BENCHMARK
+			Assert.Fail("Benchmark  " + Config.Get());
+#else
+			Assert.Fail("Unknown  " + Config.Get());
+#endif
+		}
+
 		[Benchmark()]
 		public byte CreateArrayAndGet()
 		{
