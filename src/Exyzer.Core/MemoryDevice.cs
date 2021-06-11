@@ -149,9 +149,8 @@ namespace Exyzer
 		IEnumerator<byte> IEnumerable<byte>.GetEnumerator()
 		{
 			if (this.CanRead) {
-				var data = this.Data;
-				for (int i = 0; i < data.Length; ++i) {
-					yield return data[i];
+				for (int i = 0; i < this.Data.Length; ++i) {
+					yield return this.Data[i];
 				}
 			}
 		}
