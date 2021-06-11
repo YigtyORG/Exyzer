@@ -7,6 +7,9 @@
 ****/
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace Exyzer
 {
@@ -14,7 +17,7 @@ namespace Exyzer
 	///  メモリを表します。
 	///  このクラスは抽象クラスです。
 	/// </summary>
-	public abstract class MemoryDevice : IDevice
+	public abstract class MemoryDevice : IDevice, IEnumerable<byte>
 	{
 		/// <inheritdoc/>
 		public virtual string Name => nameof(MemoryDevice);
@@ -127,6 +130,29 @@ namespace Exyzer
 			} else {
 				return IOResult.AccessDenied;
 			}
+		}
+
+		/// <summary>
+		///  現在のメモリを順次アクセスします。
+		/// </summary>
+		/// <returns><see cref="System.Span{T}.Enumerator"/>オブジェクトを返します。</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public Span<byte>.Enumerator GetEnumerator()
+		{
+			return this.Data.GetEnumerator();
+		}
+
+		IEnumerator<byte> IEnumerable<byte>.GetEnumerator()
+		{
+			var data = this.Data;
+			for (int i = 0; i < data.Length; ++i) {
+				yield return data[i];
+			}
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return ((IEnumerable<byte>)(this)).GetEnumerator();
 		}
 	}
 }
