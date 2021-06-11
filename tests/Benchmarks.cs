@@ -12,6 +12,7 @@ using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Diagnosers;
 using BenchmarkDotNet.Jobs;
+using Exyzer.Tests.Devices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 #if BENCHMARK

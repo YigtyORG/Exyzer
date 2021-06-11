@@ -8,9 +8,10 @@
 
 using System;
 using System.Linq;
+using Exyzer.Devices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Exyzer.Tests
+namespace Exyzer.Tests.Devices
 {
 	[TestClass()]
 	public class MemoryDeviceTests

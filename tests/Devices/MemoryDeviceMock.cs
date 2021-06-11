@@ -7,8 +7,9 @@
 ****/
 
 using System;
+using Exyzer.Devices;
 
-namespace Exyzer.Tests
+namespace Exyzer.Tests.Devices
 {
 	internal sealed class MemoryDeviceMock : MemoryDevice
 	{

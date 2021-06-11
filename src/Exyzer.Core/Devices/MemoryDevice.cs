@@ -11,7 +11,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-namespace Exyzer
+namespace Exyzer.Devices
 {
 	/// <summary>
 	///  メモリを表します。
