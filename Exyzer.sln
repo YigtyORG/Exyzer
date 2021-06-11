@@ -17,7 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub Items", "GitHub Item
 	ProjectSection(SolutionItems) = preProject
 		.github\dependabot.yml = .github\dependabot.yml
 		.github\FUNDING.yml = .github\FUNDING.yml
-		.github\PULL_REQUEST_TEMPLATE.md = .github\PULL_REQUEST_TEMPLATE.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{3137F210-464A-46CA-86A3-418AA87336D2}"
@@ -31,9 +30,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{
 		.github\ISSUE_TEMPLATE\feature_request_en.md = .github\ISSUE_TEMPLATE\feature_request_en.md
 		.github\ISSUE_TEMPLATE\feature_request_ja.md = .github\ISSUE_TEMPLATE\feature_request_ja.md
 		.github\PULL_REQUEST_TEMPLATE\Japanese.md = .github\PULL_REQUEST_TEMPLATE\Japanese.md
+		.github\PULL_REQUEST_TEMPLATE.md = .github\PULL_REQUEST_TEMPLATE.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflows", "Workflows", "{4E9EDF31-7F0B-4B92-84CA-76D422434B90}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflow Actions", "Workflow Actions", "{4E9EDF31-7F0B-4B92-84CA-76D422434B90}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\Benchmark.yml = .github\workflows\Benchmark.yml
 		.github\workflows\BuildTest.yml = .github\workflows\BuildTest.yml
