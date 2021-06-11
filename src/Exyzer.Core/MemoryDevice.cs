@@ -139,14 +139,20 @@ namespace Exyzer
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public Span<byte>.Enumerator GetEnumerator()
 		{
-			return this.Data.GetEnumerator();
+			if (this.CanRead) {
+				return this.Data.GetEnumerator();
+			} else {
+				return default;
+			}
 		}
 
 		IEnumerator<byte> IEnumerable<byte>.GetEnumerator()
 		{
-			var data = this.Data;
-			for (int i = 0; i < data.Length; ++i) {
-				yield return data[i];
+			if (this.CanRead) {
+				var data = this.Data;
+				for (int i = 0; i < data.Length; ++i) {
+					yield return data[i];
+				}
 			}
 		}
 

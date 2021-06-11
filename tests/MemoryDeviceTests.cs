@@ -7,6 +7,7 @@
 ****/
 
 using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Exyzer.Tests
@@ -205,6 +206,31 @@ namespace Exyzer.Tests
 				} else {
 					Assert.AreEqual(IOResult.AccessDenied, result);
 				}
+			}
+		}
+
+		[TestMethod()]
+		public void GetEnumeratorTest()
+		{
+			GetEnumeratorTestCore(true,  true);
+			GetEnumeratorTestCore(true,  false);
+			GetEnumeratorTestCore(false, true);
+			GetEnumeratorTestCore(false, false);
+		}
+
+		private static void GetEnumeratorTestCore(bool read, bool write, int size = 100)
+		{
+			var    md    = new MemoryDeviceMock(read, write, new byte[size]);
+			byte[] array = md.ToArray();
+
+			if (read) {
+				Assert.AreEqual(array.Length, size);
+			} else {
+				Assert.AreEqual(array.Length, 0);
+			}
+
+			foreach (byte b in md) {
+				Assert.AreEqual(0, b);
 			}
 		}
 	}
