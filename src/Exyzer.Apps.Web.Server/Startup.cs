@@ -6,7 +6,6 @@
  * distributed under the MIT License.
 ****/
 
-using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,31 +13,24 @@ using Microsoft.Extensions.Hosting;
 
 namespace Exyzer.Apps.Web.Server
 {
-	internal sealed class Startup : StartupBase
+	internal sealed class Startup
 	{
-		private readonly IWebHostEnvironment _env;
-
-		public Startup(IWebHostEnvironment env)
+		public void ConfigureServices(IServiceCollection services)
 		{
-			_env = env ?? throw new ArgumentNullException(nameof(env));
-		}
-
-		public override void ConfigureServices(IServiceCollection services)
-		{
-			base.ConfigureServices(services);
 			services.AddControllersWithViews();
 			services.AddRazorPages();
 		}
 
-		public override void Configure(IApplicationBuilder app)
+		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
-			if (_env.IsDevelopment()) {
+			if (env.IsDevelopment()) {
 				app.UseDeveloperExceptionPage();
 				app.UseWebAssemblyDebugging();
 			} else {
 				app.UseExceptionHandler("/Error");
 				app.UseHsts();
 			}
+			app.UsePathBase("/Exyzer");
 			app.UseHttpsRedirection();
 			app.UseBlazorFrameworkFiles();
 			app.UseStaticFiles();
@@ -46,7 +38,7 @@ namespace Exyzer.Apps.Web.Server
 			app.UseEndpoints(endpoints => {
 				endpoints.MapRazorPages();
 				endpoints.MapControllers();
-				endpoints.MapFallbackToFile("index.html");
+				endpoints.MapFallbackToFile("/index.html");
 			});
 		}
 	}

@@ -18,10 +18,11 @@ namespace Exyzer.Apps.Web.Server
 		private static int Main(string[] args)
 		{
 			try {
-				var host = Host.CreateDefaultBuilder()
+				Host.CreateDefaultBuilder(args)
 					.ConfigureWebHostDefaults(builder => builder
 						.UseStartup<Startup>())
-					.Build();
+					.Build()
+					.Run();
 				return 0;
 			} catch (Exception e) {
 				Console.ForegroundColor = ConsoleColor.Red;
