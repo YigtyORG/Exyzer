@@ -5,11 +5,12 @@
  *
  * distributed under the MIT License.
 **-->
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 	</PropertyGroup>
 	<ItemGroup>
-		<ProjectReference Include="../Exyzer.Engines.All/Exyzer.Engines.All.csproj" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.7" />
+		<ProjectReference Include="../Exyzer.Apps.Web/Exyzer.Apps.Web.csproj" />
 	</ItemGroup>
 </Project>

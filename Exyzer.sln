@@ -80,6 +80,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{23871F27-6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engines", "Engines", "{63723433-554C-4D76-86A5-F08A737215AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exyzer.Apps.Web.Server", "src\Exyzer.Apps.Web.Server\Exyzer.Apps.Web.Server.csproj", "{11B10CBD-EFB3-467A-AD5B-D699BA6C092C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Benchmark|Any CPU = Benchmark|Any CPU
@@ -135,6 +137,12 @@ Global
 		{08FCB702-89C4-4CCD-B03C-D52537579D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08FCB702-89C4-4CCD-B03C-D52537579D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08FCB702-89C4-4CCD-B03C-D52537579D07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11B10CBD-EFB3-467A-AD5B-D699BA6C092C}.Benchmark|Any CPU.ActiveCfg = Benchmark|Any CPU
+		{11B10CBD-EFB3-467A-AD5B-D699BA6C092C}.Benchmark|Any CPU.Build.0 = Benchmark|Any CPU
+		{11B10CBD-EFB3-467A-AD5B-D699BA6C092C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11B10CBD-EFB3-467A-AD5B-D699BA6C092C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11B10CBD-EFB3-467A-AD5B-D699BA6C092C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11B10CBD-EFB3-467A-AD5B-D699BA6C092C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,6 +158,7 @@ Global
 		{FA9FBD68-B214-4156-B3C6-4C7687EE5504} = {63723433-554C-4D76-86A5-F08A737215AF}
 		{7F0B191A-80C5-4401-BD34-6D7A19097383} = {23871F27-6D3D-4E44-A5FB-CD80272F1168}
 		{08FCB702-89C4-4CCD-B03C-D52537579D07} = {23871F27-6D3D-4E44-A5FB-CD80272F1168}
+		{11B10CBD-EFB3-467A-AD5B-D699BA6C092C} = {23871F27-6D3D-4E44-A5FB-CD80272F1168}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7CD41B2D-2CA9-4524-B550-C032EB599B59}
