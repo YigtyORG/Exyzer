@@ -1,0 +1,18 @@
+@****
+ * Exyzer
+ * Copyright (C) 2020-2021 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2021 Takym.
+ *
+ * distributed under the MIT License.
+****@
+
+<Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
+	<Found Context="routeData">
+		<RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+	</Found>
+	<NotFound>
+		<LayoutView Layout="@typeof(MainLayout)">
+			<p>The page not found.</p>
+		</LayoutView>
+	</NotFound>
+</Router>

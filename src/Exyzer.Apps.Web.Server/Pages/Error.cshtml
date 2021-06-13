@@ -1,0 +1,26 @@
+@****
+ * Exyzer
+ * Copyright (C) 2020-2021 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2021 Takym.
+ *
+ * distributed under the MIT License.
+****@
+
+@page
+@model Exyzer.Apps.Web.Server.Pages.ErrorModel
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>Exyzer Error</title>
+	</head>
+	<body>
+		<h1>Error @this.HttpContext.Response.StatusCode</h1>
+		@if (this.Model.ShowRequestId) {
+			<p>The support code is: <code>@this.Model.RequestId</code></p>
+		}
+	</body>
+</html>
