@@ -12,12 +12,19 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<title>Exyzer</title>
-	<base href="/" />
 	<link href="Exyzer.Apps.Web.styles.css" rel="stylesheet" />
+	<style>
+		body, div.app, div.blazor-error-ui {
+			margin : 0;
+			padding: 0;
+		}
+	</style>
 </head>
 	<body>
-		<div id="app">Loading...</div>
+		<div id="app"></div>
 		<div id="blazor-error-ui">
+			<p>Now loading...</p>
+			<p>OR</p>
 			<p>Failed to load the page by unexpected errors.</p>
 			<p>Please click <a href="">here</a> to reload.</p>
 		</div>
