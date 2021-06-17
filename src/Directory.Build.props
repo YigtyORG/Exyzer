@@ -48,23 +48,4 @@
 		<DebugType>pdbonly</DebugType>
 		<DebugSymbols>true</DebugSymbols>
 	</PropertyGroup>
-	<ItemGroup Label="Resources">
-		<Content Include="../../*.md" Pack="true" PackagePath="/">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-			<Visible>false</Visible>
-		</Content>
-		<EmbeddedResource Update="Properties/Resources.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
-		<EmbeddedResource Update="Properties/Resources.*.resx">
-			<DependentUpon>Resources.resx</DependentUpon>
-		</EmbeddedResource>
-		<Compile Update="Properties/Resources.Designer.cs">
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Resources.resx</DependentUpon>
-		</Compile>
-	</ItemGroup>
 </Project>
