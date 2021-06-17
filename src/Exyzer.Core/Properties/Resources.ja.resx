@@ -126,7 +126,4 @@
   <data name="ProcessorExtensions_SetFormattedRegisterValue_ArgumentException" xml:space="preserve">
     <value>指定されたレジスタ番号「{0}」が誤っているか、指定された書式「{1}」が無効であるか、指定された値「{2}」を認識できないか、またはレジスタ値の設定に対応していません。</value>
   </data>
-  <data name="ValueFormatter_ToFormattedString_Unknown" xml:space="preserve">
-    <value>&lt;不明&gt;</value>
-  </data>
 </root>
