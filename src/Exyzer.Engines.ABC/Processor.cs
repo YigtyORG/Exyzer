@@ -6,6 +6,7 @@
  * distributed under the MIT License.
 ****/
 
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
@@ -24,14 +25,16 @@ namespace Exyzer.Engines.ABC
 		private readonly List<IDevice>     _devices;
 		private          MainMemoryDevice? _rom;
 		private          MainMemoryDevice? _rwm;
+		private          int               _ip;
 
 		/// <inheritdoc/>
-		public int RegisterCount { get; }
+		public int RegisterCount => 1;
 
 		internal Processor(RuntimeEngine owner)
 		{
 			_owner   = owner;
 			_devices = new();
+			_ip      = 0;
 		}
 
 		/// <inheritdoc/>
@@ -49,14 +52,23 @@ namespace Exyzer.Engines.ABC
 		/// <inheritdoc/>
 		public bool TryGetFormattedRegisterValue(int index, ValueFormat format, [NotNullWhen(true)] out string? value)
 		{
-			value = null;
-			return false;
+			if (index == 0) {
+				if (format == ValueFormat.DisplayName) {
+					value = "IP";
+				} else {
+					value = ValueFormatter.ToFormattedString(_ip, format);
+				}
+				return true;
+			} else {
+				value = null;
+				return false;
+			}
 		}
 
 		/// <inheritdoc/>
 		public bool TrySetFormattedRegisterValue(int index, ValueFormat format, string? value)
 		{
-			return false;
+			throw new NotImplementedException();
 		}
 
 		internal void AddDevice(IDevice device)

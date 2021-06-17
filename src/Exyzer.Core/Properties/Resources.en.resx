@@ -126,4 +126,7 @@
   <data name="ProcessorExtensions_SetFormattedRegisterValue_ArgumentException" xml:space="preserve">
     <value>The specified register index "{0}" is wrong, the specified format "{1}" is invalid, the specified value "{2}" is not correctly formatted, or to set register value is not supported.</value>
   </data>
+  <data name="ValueFormatter_ToFormattedString_Unknown" xml:space="preserve">
+    <value>&lt;unknown&gt;</value>
+  </data>
 </root>

@@ -126,4 +126,7 @@
   <data name="ProcessorExtensions_SetFormattedRegisterValue_ArgumentException" xml:space="preserve">
     <value>ProcessorExtensions_SetFormattedRegisterValue_ArgumentException {0} {1} {2}</value>
   </data>
+  <data name="ValueFormatter_ToFormattedString_Unknown" xml:space="preserve">
+    <value>ValueFormatter_ToFormattedString_Unknown</value>
+  </data>
 </root>
