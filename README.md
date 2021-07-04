@@ -5,6 +5,8 @@ Copyright (C) 2020-2021 Takym.
 [![Version](https://img.shields.io/badge/version-none-inactive)](https://github.com/YigtyORG/TakymLib/releases)
 [![License](https://img.shields.io/github/license/YigtyORG/Exyzer)](LICENSE.md)
 [![BuildTest](https://github.com/YigtyORG/Exyzer/workflows/BuildTest/badge.svg)](https://github.com/YigtyORG/Exyzer/actions/workflows/BuildTest.yml)
+[![Benchmark](https://github.com/YigtyORG/Exyzer/workflows/Benchmark/badge.svg)](https://github.com/YigtyORG/Exyzer/actions/workflows/Benchmark.yml)
+[![CodeQL](https://github.com/YigtyORG/Exyzer/workflows/CodeQL/badge.svg)](https://github.com/YigtyORG/Exyzer/actions/workflows/CodeQL.yml)
 [![NuGet](https://github.com/YigtyORG/Exyzer/workflows/NuGet/badge.svg)](https://github.com/YigtyORG/Exyzer/actions/workflows/NuGet.yml)
 
 [![GitHub Watchers](https://img.shields.io/github/watchers/YigtyORG/Exyzer?style=social)](https://github.com/YigtyORG/Exyzer/watchers)

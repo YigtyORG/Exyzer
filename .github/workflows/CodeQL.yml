@@ -1,0 +1,49 @@
+# ***********************************************************
+# * Exyzer                                                  *
+# * Copyright (C) 2020-2021 Yigty.ORG; all rights reserved. *
+# * Copyright (C) 2020-2021 Takym.                          *
+# *                                                         *
+# * distributed under the MIT License.                      *
+# ***********************************************************
+
+name: "CodeQL"
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        bc: [ Debug, Release ]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2.3.4
+      with:
+        submodules: recursive
+
+    # Initialize
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: csharp
+
+    # Build
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1.8.1
+      with:
+        dotnet-version: 5.0.301
+    - name: Build
+      run: dotnet build -c ${{ matrix.bc }}
+
+    # Analyze
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
