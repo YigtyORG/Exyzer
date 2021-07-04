@@ -111,7 +111,7 @@ namespace Exyzer
 		{
 			Span<char> buf = stackalloc char[<#= type.bits #>];
 			for (int i = 0; i < buf.Length; ++i) {
-				buf[i] = unchecked((char)((value & (<#= type.msb #> >> i)) + '0'));
+				buf[i] = unchecked((char)(((value & (<#= type.msb #> >> i)) == 0) ? '0' : '1'));
 			}
 			result = buf.ToString();
 			return true;

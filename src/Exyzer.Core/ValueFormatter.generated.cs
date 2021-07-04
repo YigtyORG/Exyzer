@@ -96,7 +96,7 @@ namespace Exyzer
 		{
 			Span<char> buf = stackalloc char[8];
 			for (int i = 0; i < buf.Length; ++i) {
-				buf[i] = unchecked((char)((value & (0x80 >> i)) + '0'));
+				buf[i] = unchecked((char)(((value & (0x80 >> i)) == 0) ? '0' : '1'));
 			}
 			result = buf.ToString();
 			return true;
@@ -384,7 +384,7 @@ namespace Exyzer
 		{
 			Span<char> buf = stackalloc char[16];
 			for (int i = 0; i < buf.Length; ++i) {
-				buf[i] = unchecked((char)((value & (0x8000 >> i)) + '0'));
+				buf[i] = unchecked((char)(((value & (0x8000 >> i)) == 0) ? '0' : '1'));
 			}
 			result = buf.ToString();
 			return true;
@@ -676,7 +676,7 @@ namespace Exyzer
 		{
 			Span<char> buf = stackalloc char[32];
 			for (int i = 0; i < buf.Length; ++i) {
-				buf[i] = unchecked((char)((value & (0x80000000 >> i)) + '0'));
+				buf[i] = unchecked((char)(((value & (0x80000000 >> i)) == 0) ? '0' : '1'));
 			}
 			result = buf.ToString();
 			return true;
@@ -968,7 +968,7 @@ namespace Exyzer
 		{
 			Span<char> buf = stackalloc char[64];
 			for (int i = 0; i < buf.Length; ++i) {
-				buf[i] = unchecked((char)((value & (0x8000000000000000 >> i)) + '0'));
+				buf[i] = unchecked((char)(((value & (0x8000000000000000 >> i)) == 0) ? '0' : '1'));
 			}
 			result = buf.ToString();
 			return true;
