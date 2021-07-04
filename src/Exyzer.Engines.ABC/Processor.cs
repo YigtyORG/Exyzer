@@ -47,7 +47,7 @@ namespace Exyzer.Engines.ABC
 		}
 
 		/// <inheritdoc/>
-		public bool TryGetFormattedRegisterValue(int index, ValueFormat format, [NotNullWhen(true)] out string? value)
+		public bool TryGetFormattedRegisterValue(int index, ValueFormat format, [MaybeNullWhen(false)][NotNullWhen(true)] out string? value)
 		{
 			value = null;
 			return false;

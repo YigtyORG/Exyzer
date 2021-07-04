@@ -37,7 +37,7 @@ namespace Exyzer
 		/// <param name="format">値の書式の種類を指定します。</param>
 		/// <param name="value">レジスタ値の文字列表現を返します。</param>
 		/// <returns>成功した場合は<see langword="true"/>、失敗した場合は<see langword="false"/>を返します。</returns>
-		public bool TryGetFormattedRegisterValue(int index, ValueFormat format, [NotNullWhen(true)] out string? value);
+		public bool TryGetFormattedRegisterValue(int index, ValueFormat format, [MaybeNullWhen(false)][NotNullWhen(true)] out string? value);
 
 		/// <summary>
 		///  書式設定された文字列をレジスタに設定します。
