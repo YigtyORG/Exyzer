@@ -11,6 +11,16 @@
 		<RootNamespace>Exyzer</RootNamespace>
 	</PropertyGroup>
 	<ItemGroup>
+		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
 		<ProjectReference Include="../../lib/TakymLib/src/TakymLib/TakymLib.csproj" />
+		<None Update="ValueFormatter.csx">
+			<Generator>TextTemplatingFileGenerator</Generator>
+			<LastGenOutput>ValueFormatter.generated.cs</LastGenOutput>
+		</None>
+		<Compile Update="ValueFormatter.generated.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ValueFormatter.csx</DependentUpon>
+		</Compile>
 	</ItemGroup>
 </Project>

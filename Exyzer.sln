@@ -37,6 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workflow Actions", "Workflo
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\Benchmark.yml = .github\workflows\Benchmark.yml
 		.github\workflows\BuildTest.yml = .github\workflows\BuildTest.yml
+		.github\workflows\CodeQL.yml = .github\workflows\CodeQL.yml
 		.github\workflows\NuGet.yml = .github\workflows\NuGet.yml
 	EndProjectSection
 EndProject
@@ -68,19 +69,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TakymLib", "lib\TakymLib\src\TakymLib\TakymLib.csproj", "{2BE22BEF-6B86-4C6F-8A30-9A8F246B323A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exyzer.Engines.ABC", "src\Exyzer.Engines.ABC\Exyzer.Engines.ABC.csproj", "{D6878380-FDE8-478E-ADF8-B7C8D52E05FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exyzer.Engines.ABC", "src\Exyzer.Engines.ABC\Exyzer.Engines.ABC.csproj", "{D6878380-FDE8-478E-ADF8-B7C8D52E05FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exyzer.Engines.All", "src\Exyzer.Engines.All\Exyzer.Engines.All.csproj", "{FA9FBD68-B214-4156-B3C6-4C7687EE5504}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exyzer.Engines.All", "src\Exyzer.Engines.All\Exyzer.Engines.All.csproj", "{FA9FBD68-B214-4156-B3C6-4C7687EE5504}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exyzer.Apps.Shell", "src\Exyzer.Apps.Shell\Exyzer.Apps.Shell.csproj", "{7F0B191A-80C5-4401-BD34-6D7A19097383}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exyzer.Apps.Shell", "src\Exyzer.Apps.Shell\Exyzer.Apps.Shell.csproj", "{7F0B191A-80C5-4401-BD34-6D7A19097383}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exyzer.Apps.Web", "src\Exyzer.Apps.Web\Exyzer.Apps.Web.csproj", "{08FCB702-89C4-4CCD-B03C-D52537579D07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exyzer.Apps.Web", "src\Exyzer.Apps.Web\Exyzer.Apps.Web.csproj", "{08FCB702-89C4-4CCD-B03C-D52537579D07}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{23871F27-6D3D-4E44-A5FB-CD80272F1168}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engines", "Engines", "{63723433-554C-4D76-86A5-F08A737215AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exyzer.Apps.Web.Server", "src\Exyzer.Apps.Web.Server\Exyzer.Apps.Web.Server.csproj", "{11B10CBD-EFB3-467A-AD5B-D699BA6C092C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exyzer.Apps.Web.Server", "src\Exyzer.Apps.Web.Server\Exyzer.Apps.Web.Server.csproj", "{11B10CBD-EFB3-467A-AD5B-D699BA6C092C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
