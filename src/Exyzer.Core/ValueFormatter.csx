@@ -10,6 +10,8 @@
 // このソースファイルは T4 を使用して自動生成しています。
 //
 
+#nullable enable
+
 <#@ template language="C#" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Linq" #>
@@ -176,7 +178,7 @@ namespace Exyzer
 		/// <param name="provider">書式設定を制御するオブジェクトを指定します。既定値は<see langword="null"/>です。</param>
 		/// <returns>変換に成功した場合は<see langword="true"/>、失敗した場合は<see langword="false"/>を返します。</returns>
 		public static bool TryToU<#= type.funcName #>(
-			                                          this string             value,
+			                                          this string?            value,
 			                                               ValueFormat        format,
 			[MaybeNullWhen(false)][NotNullWhen(true)] out  <#= type.name_u #> result,
 			                                               IFormatProvider?   provider = null)
@@ -206,7 +208,7 @@ namespace Exyzer
 		/// <param name="provider">書式設定を制御するオブジェクトを指定します。既定値は<see langword="null"/>です。</param>
 		/// <returns>変換に成功した場合は<see langword="true"/>、失敗した場合は<see langword="false"/>を返します。</returns>
 		public static bool TryToS<#= type.funcName #>(
-			                                          this string             value,
+			                                          this string?            value,
 			                                               ValueFormat        format,
 			[MaybeNullWhen(false)][NotNullWhen(true)] out  <#= type.name_s #> result,
 			                                               IFormatProvider?   provider = null)

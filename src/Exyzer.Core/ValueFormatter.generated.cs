@@ -10,6 +10,8 @@
 // このソースファイルは T4 を使用して自動生成しています。
 //
 
+#nullable enable
+
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
@@ -151,7 +153,7 @@ namespace Exyzer
 		/// <param name="provider">書式設定を制御するオブジェクトを指定します。既定値は<see langword="null"/>です。</param>
 		/// <returns>変換に成功した場合は<see langword="true"/>、失敗した場合は<see langword="false"/>を返します。</returns>
 		public static bool TryToUByte(
-			                                          this string             value,
+			                                          this string?            value,
 			                                               ValueFormat        format,
 			[MaybeNullWhen(false)][NotNullWhen(true)] out  byte result,
 			                                               IFormatProvider?   provider = null)
@@ -181,7 +183,7 @@ namespace Exyzer
 		/// <param name="provider">書式設定を制御するオブジェクトを指定します。既定値は<see langword="null"/>です。</param>
 		/// <returns>変換に成功した場合は<see langword="true"/>、失敗した場合は<see langword="false"/>を返します。</returns>
 		public static bool TryToSByte(
-			                                          this string             value,
+			                                          this string?            value,
 			                                               ValueFormat        format,
 			[MaybeNullWhen(false)][NotNullWhen(true)] out  sbyte result,
 			                                               IFormatProvider?   provider = null)
@@ -443,7 +445,7 @@ namespace Exyzer
 		/// <param name="provider">書式設定を制御するオブジェクトを指定します。既定値は<see langword="null"/>です。</param>
 		/// <returns>変換に成功した場合は<see langword="true"/>、失敗した場合は<see langword="false"/>を返します。</returns>
 		public static bool TryToUInt16(
-			                                          this string             value,
+			                                          this string?            value,
 			                                               ValueFormat        format,
 			[MaybeNullWhen(false)][NotNullWhen(true)] out  ushort result,
 			                                               IFormatProvider?   provider = null)
@@ -473,7 +475,7 @@ namespace Exyzer
 		/// <param name="provider">書式設定を制御するオブジェクトを指定します。既定値は<see langword="null"/>です。</param>
 		/// <returns>変換に成功した場合は<see langword="true"/>、失敗した場合は<see langword="false"/>を返します。</returns>
 		public static bool TryToSInt16(
-			                                          this string             value,
+			                                          this string?            value,
 			                                               ValueFormat        format,
 			[MaybeNullWhen(false)][NotNullWhen(true)] out  short result,
 			                                               IFormatProvider?   provider = null)
@@ -735,7 +737,7 @@ namespace Exyzer
 		/// <param name="provider">書式設定を制御するオブジェクトを指定します。既定値は<see langword="null"/>です。</param>
 		/// <returns>変換に成功した場合は<see langword="true"/>、失敗した場合は<see langword="false"/>を返します。</returns>
 		public static bool TryToUInt32(
-			                                          this string             value,
+			                                          this string?            value,
 			                                               ValueFormat        format,
 			[MaybeNullWhen(false)][NotNullWhen(true)] out  uint result,
 			                                               IFormatProvider?   provider = null)
@@ -765,7 +767,7 @@ namespace Exyzer
 		/// <param name="provider">書式設定を制御するオブジェクトを指定します。既定値は<see langword="null"/>です。</param>
 		/// <returns>変換に成功した場合は<see langword="true"/>、失敗した場合は<see langword="false"/>を返します。</returns>
 		public static bool TryToSInt32(
-			                                          this string             value,
+			                                          this string?            value,
 			                                               ValueFormat        format,
 			[MaybeNullWhen(false)][NotNullWhen(true)] out  int result,
 			                                               IFormatProvider?   provider = null)
@@ -1027,7 +1029,7 @@ namespace Exyzer
 		/// <param name="provider">書式設定を制御するオブジェクトを指定します。既定値は<see langword="null"/>です。</param>
 		/// <returns>変換に成功した場合は<see langword="true"/>、失敗した場合は<see langword="false"/>を返します。</returns>
 		public static bool TryToUInt64(
-			                                          this string             value,
+			                                          this string?            value,
 			                                               ValueFormat        format,
 			[MaybeNullWhen(false)][NotNullWhen(true)] out  ulong result,
 			                                               IFormatProvider?   provider = null)
@@ -1057,7 +1059,7 @@ namespace Exyzer
 		/// <param name="provider">書式設定を制御するオブジェクトを指定します。既定値は<see langword="null"/>です。</param>
 		/// <returns>変換に成功した場合は<see langword="true"/>、失敗した場合は<see langword="false"/>を返します。</returns>
 		public static bool TryToSInt64(
-			                                          this string             value,
+			                                          this string?            value,
 			                                               ValueFormat        format,
 			[MaybeNullWhen(false)][NotNullWhen(true)] out  long result,
 			                                               IFormatProvider?   provider = null)
