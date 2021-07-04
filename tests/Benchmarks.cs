@@ -23,7 +23,7 @@ namespace Exyzer.Tests
 {
 	[TestClass()]
 	[MemoryDiagnoser()]
-	[DisassemblyDiagnoser(printSource: true, exportHtml: true)]
+	[DisassemblyDiagnoser(5, true, true, true, true, true, true)]
 	public class Benchmarks
 	{
 		private static readonly IConfig _config = DefaultConfig.Instance.AddJob(new Job()
