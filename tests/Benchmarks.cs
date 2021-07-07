@@ -9,9 +9,7 @@
 using System;
 using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
-using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Diagnosers;
-using BenchmarkDotNet.Jobs;
 using Exyzer.Tests.Devices;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -26,11 +24,6 @@ namespace Exyzer.Tests
 	[DisassemblyDiagnoser(5, true, true, true, true, true, true)]
 	public class Benchmarks
 	{
-		private static readonly IConfig _config = DefaultConfig.Instance.AddJob(new Job()
-			.Freeze()
-			.WithCustomBuildConfiguration("Benchmark")
-		);
-
 		[TestMethod()]
 		public void Run()
 		{
