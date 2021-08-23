@@ -11,7 +11,7 @@
 		<IsWindows>$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))</IsWindows>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="docfx.console" Version="2.58.0">
+		<PackageReference Include="docfx.console" Version="2.58.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
