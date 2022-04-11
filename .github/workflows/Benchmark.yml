@@ -34,7 +34,7 @@ jobs:
     - name: Test
       run: dotnet test -c Benchmark --no-build --verbosity normal
     - name: Save Benchmarks Results
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: benchmarks-results
         path: "**/BenchmarkDotNet.Artifacts/**/*"
