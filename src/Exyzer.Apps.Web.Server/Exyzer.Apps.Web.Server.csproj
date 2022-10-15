@@ -10,7 +10,7 @@
 		<OutputType>Exe</OutputType>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.7" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.10" />
 		<ProjectReference Include="../Exyzer.Apps.Web/Exyzer.Apps.Web.csproj" />
 	</ItemGroup>
 </Project>
