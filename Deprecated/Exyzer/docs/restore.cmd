@@ -1,7 +1,7 @@
 @REM ***********************************************************
 @REM * Exyzer                                                  *
-@REM * Copyright (C) 2020-2021 Yigty.ORG; all rights reserved. *
-@REM * Copyright (C) 2020-2021 Takym.                          *
+@REM * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved. *
+@REM * Copyright (C) 2020-2022 Takym.                          *
 @REM *                                                         *
 @REM * distributed under the MIT License.                      *
 @REM ***********************************************************

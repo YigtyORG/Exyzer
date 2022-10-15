@@ -2,8 +2,8 @@
 <!DOCTYPE Project>
 <!--*
  * Exyzer
- * Copyright (C) 2020-2021 Yigty.ORG; all rights reserved.
- * Copyright (C) 2020-2021 Takym.
+ * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2022 Takym.
  *
  * distributed under the MIT License.
 **-->
@@ -28,7 +28,7 @@
 		<Product>Exyzer</Product>
 		<Authors>Takym</Authors>
 		<Description></Description>
-		<Copyright>Copyright (C) 2020-2021 Yigty.ORG; all rights reserved. Copyright (C) 2020-2021 Takym.</Copyright>
+		<Copyright>Copyright (C) 2020-2022 Yigty.ORG; all rights reserved. Copyright (C) 2020-2022 Takym.</Copyright>
 		<VersionPrefix>0.0.0.0</VersionPrefix>
 		<InformationalVersion>XYZ00000</InformationalVersion>
 		<RepositoryUrl>https://github.com/YigtyORG/Exyzer/</RepositoryUrl>

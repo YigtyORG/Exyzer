@@ -1,6 +1,6 @@
 # Exyzer
-Copyright (C) 2020-2021 Yigty.ORG; all rights reserved.
-Copyright (C) 2020-2021 Takym.
+Copyright (C) 2020-2022 Yigty.ORG; all rights reserved.
+Copyright (C) 2020-2022 Takym.
 
 This file is a placeholder for a list of contributors.
 
