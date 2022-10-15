@@ -22,7 +22,7 @@ jobs:
         os: [ windows-latest, ubuntu-latest, macos-latest ]
         bc: [ Debug, Release ]
     steps:
-    - uses: actions/checkout@v2.3.4
+    - uses: actions/checkout@v3.1.0
       with:
         submodules: recursive
     - name: Setup .NET
