@@ -1,0 +1,29 @@
+<!--*
+ * TakymLib
+ * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2022 Takym.
+ *
+ * distributed under the MIT License.
+**-->
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<AssemblyName>TakymLib.Core</AssemblyName>
+		<RootNamespace>TakymLib.Core</RootNamespace>
+		<OutputType>Library</OutputType>
+	</PropertyGroup>
+	<Import Project="../../TakymLib.ProjectSettings.targets" />
+	<PropertyGroup>
+		<Product>TakymLib.Core</Product>
+		<Description>The common core library.</Description>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="../TakymLib/TakymLib.csproj" />
+		<ProjectReference Include="../TakymLib.Aspect/TakymLib.Aspect.csproj" />
+		<ProjectReference Include="../TakymLib.CommandLine/TakymLib.CommandLine.csproj" />
+		<ProjectReference Include="../TakymLib.Logging/TakymLib.Logging.csproj" />
+		<ProjectReference Include="../TakymLib.Security/TakymLib.Security.csproj" />
+		<ProjectReference Include="../TakymLib.Text/TakymLib.Text.csproj" />
+		<ProjectReference Include="../TakymLib.Threading.Distributed/TakymLib.Threading.Distributed.csproj" />
+		<ProjectReference Include="../TakymLib.Threading.Tasks/TakymLib.Threading.Tasks.csproj" />
+	</ItemGroup>
+</Project>

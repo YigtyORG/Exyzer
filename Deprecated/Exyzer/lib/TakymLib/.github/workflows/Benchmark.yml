@@ -1,0 +1,41 @@
+# ***********************************************************
+# * TakymLib                                                *
+# * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved. *
+# * Copyright (C) 2020-2022 Takym.                          *
+# *                                                         *
+# * distributed under the MIT License.                      *
+# ***********************************************************
+
+name: "Benchmark"
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  Benchmark:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: recursive
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    # Build
+    - name: Build (Target Programs)
+      run: dotnet build -c ReleaseW
+    - name: Build (Testing Environment)
+      run: dotnet build -c BenchmarkW
+    # Test
+    - name: Test
+      run: dotnet test -c BenchmarkW --no-build --verbosity normal
+    # Upload Artifacts
+    - name: Save Benchmarks Results
+      uses: actions/upload-artifact@v3.1.0
+      with:
+        name: benchmarks-results
+        path: tests/bin/Benchmark/**

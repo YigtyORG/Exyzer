@@ -1,0 +1,48 @@
+{
+	"metadata": [
+		{
+			"src": [
+				{
+					"files": "**/TakymLib*.csproj",
+					"src": "../src"
+				}
+			],
+			"dest": "api"
+		}
+	],
+	"build": {
+		"content": [
+			{
+				"files": [
+					"api/**/*.yml",
+					"api/**/index.md",
+					"api/index.md"
+				]
+			},
+			{
+				"files": [
+					"toc.yml",
+					"**/*.md"
+				]
+			}
+		],
+		"resource": [
+			{
+				"files": [ "**/images/**" ],
+				"exclude": [ "**/bin/**", "**/obj/**", "**.meta" ]
+			}
+		],
+		"xrefService": [ "https://xref.docs.microsoft.com/query?uid={uid}" ],
+		"dest": "_site",
+		"globalMetadataFiles": [],
+		"fileMetadataFiles": [],
+		"template": [
+			"statictoc",
+			"packages/memberpage/2.59.4/content",
+			"template"
+		],
+		"postProcessors": [],
+		"markdownEngineName": "markdig",
+		"noLangKeyword": false
+	}
+}

@@ -1,0 +1,50 @@
+{{! this file is copied from https://github.com/dotnet/docfx/blob/dev/src/docfx.website.themes/default/partials/title.tmpl.partial and modified. }}
+{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+{{#inPackage}}
+{{name.0.value}} パッケージ
+{{/inPackage}}
+{{#inNamespace}}
+{{name.0.value}} 名前空間
+{{/inNamespace}}
+{{#inClass}}
+{{name.0.value}} クラス
+{{/inClass}}
+{{#inStruct}}
+{{name.0.value}} 構造体
+{{/inStruct}}
+{{#inInterface}}
+{{name.0.value}} インターフェース
+{{/inInterface}}
+{{#inEnum}}
+{{name.0.value}} 列挙体
+{{/inEnum}}
+{{#inDelegate}}
+{{name.0.value}} デリゲート
+{{/inDelegate}}
+{{#inConstructor}}
+{{name.0.value}} コンストラクタ
+{{/inConstructor}}
+{{#inField}}
+{{name.0.value}} フィールド
+{{/inField}}
+{{#inProperty}}
+{{name.0.value}} プロパティ
+{{/inProperty}}
+{{#inMethod}}
+{{name.0.value}} メソッド
+{{/inMethod}}
+{{#inEvent}}
+{{name.0.value}} イベント
+{{/inEvent}}
+{{#inOperator}}
+{{name.0.value}} 演算子
+{{/inOperator}}
+{{#inEii}}
+{{name.0.value}} 明示的なインターフェース実装
+{{/inEii}}
+{{#inVariable}}
+{{name.0.value}} 変数
+{{/inVariable}}
+{{#inTypeAlias}}
+{{name.0.value}} 型の別名
+{{/inTypeAlias}}

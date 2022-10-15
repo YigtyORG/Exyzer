@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<ItemGroup>
+		<Content Include="Resources/Translations/*.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</Content>
+	</ItemGroup>
+</Project>

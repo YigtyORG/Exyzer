@@ -1,0 +1,47 @@
+# ***********************************************************
+# * TakymLib                                                *
+# * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved. *
+# * Copyright (C) 2020-2022 Takym.                          *
+# *                                                         *
+# * distributed under the MIT License.                      *
+# ***********************************************************
+
+name: "CodeQL (2)"
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: windows-2019
+
+    strategy:
+      fail-fast: true
+      matrix:
+        bc: [ Debug, DebugW, Release, ReleaseW, Benchmark, BenchmarkW ]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    # Initialize
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v2
+      with:
+        languages: csharp
+
+    # Build
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    - name: Build
+      run: dotnet build -c ${{ matrix.bc }}
+
+    # Analyze
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v2

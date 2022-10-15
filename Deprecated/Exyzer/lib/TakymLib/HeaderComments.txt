@@ -1,0 +1,47 @@
+/****
+ * TakymLib
+ * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2022 Takym.
+ *
+ * distributed under the MIT License.
+****/
+
+<!--*
+ * TakymLib
+ * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2022 Takym.
+ *
+ * distributed under the MIT License.
+**-->
+
+@****
+ * TakymLib
+ * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2022 Takym.
+ *
+ * distributed under the MIT License.
+****@
+
+#|***
+ * TakymLib
+ * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2022 Takym.
+ *
+ * distributed under the MIT License.
+***|#
+
+@REM ***********************************************************
+@REM * TakymLib                                                *
+@REM * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved. *
+@REM * Copyright (C) 2020-2022 Takym.                          *
+@REM *                                                         *
+@REM * distributed under the MIT License.                      *
+@REM ***********************************************************
+
+# ***********************************************************
+# * TakymLib                                                *
+# * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved. *
+# * Copyright (C) 2020-2022 Takym.                          *
+# *                                                         *
+# * distributed under the MIT License.                      *
+# ***********************************************************

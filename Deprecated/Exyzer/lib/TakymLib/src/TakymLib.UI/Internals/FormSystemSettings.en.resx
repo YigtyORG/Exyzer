@@ -1,0 +1,121 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelDesc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>439, 15</value>
+  </data>
+  <data name="labelDesc.Text" xml:space="preserve">
+    <value>You can change settings relating to the system. Changes will affect after restarting.</value>
+  </data>
+  <data name="btnReload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 23</value>
+  </data>
+  <data name="btnReload.Text" xml:space="preserve">
+    <value>&amp;Reload</value>
+  </data>
+  <data name="btnReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 32</value>
+  </data>
+  <data name="btnReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 23</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>R&amp;eset</value>
+  </data>
+  <data name="cboxDisallowExtensions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 19</value>
+  </data>
+  <data name="cboxDisallowExtensions.Text" xml:space="preserve">
+    <value>Disallow to load extensions.</value>
+  </data>
+  <data name="cboxShowSplash.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 19</value>
+  </data>
+  <data name="cboxShowSplash.Text" xml:space="preserve">
+    <value>Show the splash screen.</value>
+  </data>
+  <data name="btnApply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 23</value>
+  </data>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>A&amp;pply</value>
+  </data>
+  <data name="btnAccept.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 256</value>
+  </data>
+  <data name="btnAccept.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 23</value>
+  </data>
+  <data name="btnAccept.Text" xml:space="preserve">
+    <value>&amp;Accept and close</value>
+  </data>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 256</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 23</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>System Settings</value>
+  </data>
+</root>

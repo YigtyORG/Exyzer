@@ -1,0 +1,22 @@
+<!--*
+ * TakymLib
+ * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2022 Takym.
+ *
+ * distributed under the MIT License.
+**-->
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<AssemblyName>TakymLib.Core.Framework</AssemblyName>
+		<RootNamespace>TakymLib.Core.Framework</RootNamespace>
+		<OutputType>Library</OutputType>
+	</PropertyGroup>
+	<Import Project="../../TakymLib.ProjectSettings.targets" />
+	<PropertyGroup>
+		<Product>TakymLib.Core.Framework</Product>
+		<Description>The common core framework library.</Description>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="../TakymLib.Core/TakymLib.Core.csproj" />
+	</ItemGroup>
+</Project>

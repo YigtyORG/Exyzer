@@ -1,0 +1,48 @@
+<!--*
+ * TakymLib
+ * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2022 Takym.
+ *
+ * distributed under the MIT License.
+**-->
+<UserControl
+	x:Class="TakymLib.UI.Views.PluginManagerView"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:models="clr-namespace:TakymLib.UI.Models"
+	mc:Ignorable="d"
+	d:DataContext="{d:DesignInstance Type=models:PluginManagerModel}"
+	d:DesignHeight="450" d:DesignWidth="800">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition MaxWidth="300"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<TreeView Grid.Column="0" ItemsSource="{Binding PluginTree}" SelectedItemChanged="TreeView_SelectedItemChanged">
+			<TreeView.ItemTemplate>
+				<HierarchicalDataTemplate ItemsSource="{Binding Children}">
+					<TextBlock Text="{Binding Plugin.DisplayName}"/>
+				</HierarchicalDataTemplate>
+			</TreeView.ItemTemplate>
+		</TreeView>
+		<StackPanel Grid.Column="1">
+			<TextBlock>
+				<Run Text="{Binding SelectedPluginTreeNode.Plugin.DisplayName, Mode=OneWay}"/>
+				<LineBreak/>
+				<LineBreak/>
+				<Run Text="{Binding SelectedPluginTreeNode.Plugin.Description, Mode=OneWay}"/>
+				<LineBreak/>
+				<LineBreak/>
+				<Run Text="{Binding SelectedPluginTreeNode.FeatureModule.Assembly.FullName, Mode=OneWay}"/>
+				<LineBreak/>
+				<LineBreak/>
+				<Run Text="{Binding SelectedPluginTreeNode.FeatureModule.Version.Copyright, Mode=OneWay}"/>
+				<LineBreak/>
+				<LineBreak/>
+				<Run Text="{Binding SelectedPluginTreeNode.FeatureModule.Version, Mode=OneWay}"/>
+			</TextBlock>
+		</StackPanel>
+	</Grid>
+</UserControl>

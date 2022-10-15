@@ -1,0 +1,50 @@
+<!--*
+ * TakymLib
+ * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2022 Takym.
+ *
+ * distributed under the MIT License.
+**-->
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+		<RootNamespace>TakymLibTests</RootNamespace>
+		<IsPackable>false</IsPackable>
+		<ServerGarbageCollection>true</ServerGarbageCollection>
+		<Configurations>Debug;Release;Benchmark</Configurations>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Benchmark'">
+		<Optimize>true</Optimize>
+		<DebugType>pdbonly</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+		<PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
+		<PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
+		<PackageReference Include="coverlet.collector" Version="3.1.2">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
+
+		<!-- 各ライブラリへの参照は下記のプロジェクトに追加する。 -->
+		<ProjectReference Include="../src/TakymLib.ConsoleApp/TakymLib.ConsoleApp.csproj" />
+
+		<EmbeddedResource Update="Properties/Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Properties/Resources.*.resx">
+			<DependentUpon>Resources.resx</DependentUpon>
+		</EmbeddedResource>
+		<Compile Update="Properties/Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+</Project>

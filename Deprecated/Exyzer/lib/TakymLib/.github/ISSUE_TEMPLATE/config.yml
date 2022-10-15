@@ -1,0 +1,16 @@
+# ***********************************************************
+# * TakymLib                                                *
+# * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved. *
+# * Copyright (C) 2020-2022 Takym.                          *
+# *                                                         *
+# * distributed under the MIT License.                      *
+# ***********************************************************
+
+blank_issues_enabled: true
+contact_links:
+  - name: How to Contribute
+    url: https://github.com/YigtyORG/TakymLib/blob/master/CONTRIBUTING.md#en
+    about: Please check this page before you submit issues or PRs.
+  - name: 貢献方法
+    url: https://github.com/YigtyORG/TakymLib/blob/master/CONTRIBUTING.md#ja
+    about: Issue または PR を作成する前に確認してください。

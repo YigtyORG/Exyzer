@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Project>
+<!--*
+ * TakymLib
+ * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2022 Takym.
+ *
+ * distributed under the MIT License.
+**-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<Configurations>Debug;Release;Benchmark</Configurations>
+		<TargetFramework>net6.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+		<CopyRefAssembliesToPublishDirectory>true</CopyRefAssembliesToPublishDirectory>
+		<Prefer32Bit>false</Prefer32Bit>
+		<IsPackable>true</IsPackable>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+		<PackageIcon>LOGO.png</PackageIcon>
+		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<EnableDefaultContentItems>false</EnableDefaultContentItems>
+		<AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>true</AppendRuntimeIdentifierToOutputPath>
+		<OutputPath>$(SolutionDir)/bin/$(AssemblyName)/$(Configuration)</OutputPath>
+		<IntermediateOutputPath>$(SolutionDir)/obj/$(AssemblyName)/$(Configuration)</IntermediateOutputPath>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(ChangeLogUrl)'!='' And '$(ReleasesUrl)' != ''">
+		<PackageReleaseNotes>See $(ChangeLogUrl) or $(ReleasesUrl) for latest release notes.</PackageReleaseNotes>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(ReadmeUrl)'!=''">
+		<PackageReadmeUrl>$(ReadmeUrl)</PackageReadmeUrl>
+		<PackageReleaseNotes Condition="'$(PackageReleaseNotes)'==''">Please read $(ReadmeUrl).</PackageReleaseNotes>
+		<PackageReleaseNotes Condition="'$(PackageReleaseNotes)'!=''">See $(ReadmeUrl) for latest readme. $(PackageReleaseNotes)</PackageReleaseNotes>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Debug'">
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<Optimize>false</Optimize>
+		<DebugType>embedded</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<DefineConstants>RELEASE;TRACE</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>none</DebugType>
+		<DebugSymbols>false</DebugSymbols>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)'=='Benchmark'">
+		<DefineConstants>BENCHMARK;TRACE</DefineConstants>
+		<Optimize>true</Optimize>
+		<DebugType>portable</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
+</Project>

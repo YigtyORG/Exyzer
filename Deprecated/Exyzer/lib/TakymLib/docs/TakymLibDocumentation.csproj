@@ -1,0 +1,30 @@
+<!--*
+ * TakymLib
+ * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2022 Takym.
+ *
+ * distributed under the MIT License.
+**-->
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<IsWindows>$([MSBuild]::IsOSPlatform('Windows'))</IsWindows>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="docfx.console" Version="2.59.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="memberpage" Version="2.59.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="$(IsWindows)">
+		<Exec Command="restore.cmd" />
+	</Target>
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="!$(IsWindows)">
+		<Exec Command="chmod -v 777 restore.sh" />
+		<Exec Command="./restore.sh" />
+	</Target>
+</Project>

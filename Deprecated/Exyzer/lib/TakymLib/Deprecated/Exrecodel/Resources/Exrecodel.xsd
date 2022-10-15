@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xsd:schema>
+<!--*
+ * Exrecodel - "Extensible Regulation/Convention Descriptor Language"
+ *    「拡張可能な規則/規約記述言語」
+ * Copyright (C) 2020-2022 Yigty.ORG; all rights reserved.
+ * Copyright (C) 2020-2022 Takym.
+ *
+ * distributed under the MIT License.
+**-->
+<xsd:schema
+	id="Exrecodel"
+	targetNamespace="Exrecodel.xsd"
+	elementFormDefault="qualified"
+	xmlns:tns="Exrecodel.xsd"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xsd:complexType name="node">
+		<xsd:annotation>
+			<xsd:documentation>Exrecodel文書の要素を表します。</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="name" type="xsd:NCName" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>要素の名前を設定します。</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:simpleType name="docType">
+		<xsd:annotation>
+			<xsd:documentation>文書の種類を表します。</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:enumeration value="thesis">
+				<xsd:annotation>
+					<xsd:documentation>文書が論文である事を示します。</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="theory">
+				<xsd:annotation>
+					<xsd:documentation>
+						文書が論理体系である事を示します。
+						thesis の別名です。
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="specification">
+				<xsd:annotation>
+					<xsd:documentation>文書が仕様書である事を示します。</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="spec">
+				<xsd:annotation>
+					<xsd:documentation>
+						文書が仕様書である事を示します。
+						specification の別名です。
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="license">
+				<xsd:annotation>
+					<xsd:documentation>文書が許諾書である事を示します。</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="agreement">
+				<xsd:annotation>
+					<xsd:documentation>
+						文書が同意書である事を示します。
+						license の別名です。
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="privacypolicy">
+				<xsd:annotation>
+					<xsd:documentation>文書が個人情報保護方針である事を示します。</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="privacy">
+				<xsd:annotation>
+					<xsd:documentation>
+						文書が個人情報保護方針である事を示します。
+						privacypolicy の別名です。
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="emailAddress">
+		<xsd:annotation>
+			<xsd:documentation>電子メールアドレスを表します。</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:pattern value=".+@.+" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="phoneNumber">
+		<xsd:annotation>
+			<xsd:documentation>電話番号を表します。</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:pattern value="[0123456789\+\-\(\)\s]+" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="xrcdl" nillable="false">
+		<xsd:annotation>
+			<xsd:documentation>Exrecodel文書を表します。</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="metadata" nillable="false">
+					<xsd:annotation>
+						<xsd:documentation>メタ情報を表します。</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:all>
+							<xsd:element name="name" type="xsd:NCName" minOccurs="1" maxOccurs="1" nillable="false">
+								<xsd:annotation>
+									<xsd:documentation>この文書の名前を表します。</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="type" type="tns:docType" minOccurs="1" maxOccurs="1" nillable="false">
+								<xsd:annotation>
+									<xsd:documentation>この文書の種類を表します。</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="lang" type="xsd:language" minOccurs="0" maxOccurs="1" nillable="true">
+								<xsd:annotation>
+									<xsd:documentation>この文書の言語を表します。</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="base" type="xsd:token" minOccurs="0" maxOccurs="1" nillable="true">
+								<xsd:annotation>
+									<xsd:documentation>この文書の基底となる文書への絶対パスまたは相対パスを表します。</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="title" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true">
+								<xsd:annotation>
+									<xsd:documentation>
+										文書の題名(表示名)を表します。
+										この要素が省略された場合、値は name 要素と同じになります。
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="author" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true">
+								<xsd:annotation>
+									<xsd:documentation>作成者の名前を表します。</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="copyright" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true">
+								<xsd:annotation>
+									<xsd:documentation>著作権情報を表します。</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="version" type="xsd:token" minOccurs="0" maxOccurs="1" nillable="true">
+								<xsd:annotation>
+									<xsd:documentation>バージョン情報を表します。</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="creation" type="xsd:dateTime" minOccurs="0" maxOccurs="1" nillable="true">
+								<xsd:annotation>
+									<xsd:documentation>新規作成日時を表します。</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="lastmodified" type="xsd:dateTime" minOccurs="0" maxOccurs="1" nillable="true">
+								<xsd:annotation>
+									<xsd:documentation>最終更新日時を表します。</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="contacts" minOccurs="0" maxOccurs="1" nillable="true">
+								<xsd:annotation>
+									<xsd:documentation>作成者の連絡先を表します。</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:choice minOccurs="0" maxOccurs="unbounded">
+										<xsd:element name="address">
+											<xsd:annotation>
+												<xsd:documentation>郵便番号を含む住所を表します。</xsd:documentation>
+											</xsd:annotation>
+											<xsd:complexType>
+												<xsd:simpleContent>
+													<xsd:extension base="xsd:string">
+														<xsd:attribute name="postcode" type="xsd:long" use="optional">
+															<xsd:annotation>
+																<xsd:documentation>整数値で表現された郵便番号を表します。</xsd:documentation>
+															</xsd:annotation>
+														</xsd:attribute>
+													</xsd:extension>
+												</xsd:simpleContent>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="email">
+											<xsd:annotation>
+												<xsd:documentation>電子メールアドレスを表します。</xsd:documentation>
+											</xsd:annotation>
+											<xsd:complexType>
+												<xsd:simpleContent>
+													<xsd:extension base="tns:emailAddress">
+														<xsd:attribute name="subject" type="xsd:string" use="optional">
+															<xsd:annotation>
+																<xsd:documentation>
+																	既定の件名を設定します。
+																</xsd:documentation>
+															</xsd:annotation>
+														</xsd:attribute>
+														<xsd:attribute name="body" type="xsd:string" use="optional">
+															<xsd:annotation>
+																<xsd:documentation>
+																	既定の本文を設定します。
+																</xsd:documentation>
+															</xsd:annotation>
+														</xsd:attribute>
+													</xsd:extension>
+												</xsd:simpleContent>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="tel" type="tns:phoneNumber">
+											<xsd:annotation>
+												<xsd:documentation>国際電話番号を表します。</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="fax" type="tns:phoneNumber">
+											<xsd:annotation>
+												<xsd:documentation>FAXの国際電話番号を表します。</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="sms" type="tns:phoneNumber">
+											<xsd:annotation>
+												<xsd:documentation>
+													SMSの国際電話番号を表します。
+													SNSではありません。
+												</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="sns" nillable="true">
+											<xsd:annotation>
+												<xsd:documentation>
+													SNSのアカウント名を表します。
+													SMSではありません。
+												</xsd:documentation>
+											</xsd:annotation>
+											<xsd:complexType>
+												<xsd:simpleContent>
+													<xsd:extension base="xsd:token">
+														<xsd:attribute name="url" type="xsd:anyURI" use="required">
+															<xsd:annotation>
+																<xsd:documentation>
+																	SNSのURL接頭辞を表します。
+																	プロトコルスキーム(例：「http:」「https:」)も含みます。
+																</xsd:documentation>
+															</xsd:annotation>
+														</xsd:attribute>
+														<xsd:attribute name="name" type="xsd:string" use="optional">
+															<xsd:annotation>
+																<xsd:documentation>SNSの名前を表します。(例：「Twitter」「GitHub」)</xsd:documentation>
+															</xsd:annotation>
+														</xsd:attribute>
+													</xsd:extension>
+												</xsd:simpleContent>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="link">
+											<xsd:annotation>
+												<xsd:documentation>
+													Webサイト等のオブジェクトへのURLを表します。
+													プロトコルスキーム(例：「http:」「https:」)も含みます。
+												</xsd:documentation>
+											</xsd:annotation>
+											<xsd:complexType>
+												<xsd:simpleContent>
+													<xsd:extension base="xsd:anyURI">
+														<xsd:attribute name="name" type="xsd:string" use="optional">
+															<xsd:annotation>
+																<xsd:documentation>リンク先のオブジェクトの名前を表します。</xsd:documentation>
+															</xsd:annotation>
+														</xsd:attribute>
+													</xsd:extension>
+												</xsd:simpleContent>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:choice>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:all>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="root" nillable="false">
+					<xsd:annotation>
+						<xsd:documentation>Exrecodel文書の他の全ての要素を含む根要素を表します。</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:complexContent>
+							<xsd:extension base="tns:node">
+								<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+									<xsd:element ref="tns:terms" />
+								</xsd:sequence>
+							</xsd:extension>
+						</xsd:complexContent>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="terms" nillable="false">
+		<xsd:annotation>
+			<xsd:documentation>用語の一覧を表します。</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="tns:node">
+					<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+						<xsd:element name="term" nillable="false">
+							<xsd:annotation>
+								<xsd:documentation>用語を定義します。</xsd:documentation>
+							</xsd:annotation>
+							<xsd:complexType>
+								<xsd:complexContent>
+									<xsd:extension base="tns:node">
+										<xsd:sequence>
+											<xsd:element name="name" type="xsd:string" nillable="false">
+												<xsd:annotation>
+													<xsd:documentation>定義する用語です。</xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+											<xsd:element name="description" type="xsd:string" nillable="false">
+												<xsd:annotation>
+													<xsd:documentation>定義する用語の説明です。</xsd:documentation>
+												</xsd:annotation>
+											</xsd:element>
+										</xsd:sequence>
+									</xsd:extension>
+								</xsd:complexContent>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

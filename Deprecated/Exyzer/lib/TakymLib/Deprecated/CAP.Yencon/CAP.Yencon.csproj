@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<AssemblyName>CAP.Yencon</AssemblyName>
+		<RootNamespace>CAP</RootNamespace>
+		<OutputType>Library</OutputType>
+	</PropertyGroup>
+	<Import Project="../DnetLibrary.ProjectSettings.targets" />
+	<PropertyGroup>
+		<Product>CAP.Yencon</Product>
+		<Description>Yencon Environment Configuration (CAP: Configuration and Properties)</Description>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="../TakymLib/TakymLib.csproj" />
+		<Compile Update="Properties/Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+		<EmbeddedResource Update="Properties/Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+</Project>

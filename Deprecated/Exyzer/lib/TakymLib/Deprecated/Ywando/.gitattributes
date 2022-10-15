@@ -1,0 +1,47 @@
+
+# 全てのファイル
+* text=auto eol=crlf encoding=utf-8
+
+# 特定のファイル
+*.cs      text diff=csharp
+*.cmd     text
+*.sh      text eol=lf
+*.html    text diff=html
+*.md      text diff=markdown
+*.js      text
+*.json    text
+*.css     text diff=css
+*.yml     text
+*.ttf     binary -text -eol -encoding -diff
+
+# プロジェクトファイル
+*.sln       merge=binary
+*.csproj    merge=binary
+*.vbproj    merge=binary
+*.vcxproj   merge=binary
+*.vcproj    merge=binary
+*.dbproj    merge=binary
+*.fsproj    merge=binary
+*.lsproj    merge=binary
+*.wixproj   merge=binary
+*.modelproj merge=binary
+*.sqlproj   merge=binary
+*.wwaproj   merge=binary
+
+# 画像ファイル
+*.bmp    binary -text -eol -encoding -diff
+*.png    binary -text -eol -encoding -diff
+*.jpg    binary -text -eol -encoding -diff
+*.gif    binary -text -eol -encoding -diff
+
+# 文書ファイル
+*.doc   diff=astextplain
+*.DOC   diff=astextplain
+*.docx  diff=astextplain
+*.DOCX  diff=astextplain
+*.dot   diff=astextplain
+*.DOT   diff=astextplain
+*.pdf   diff=astextplain
+*.PDF   diff=astextplain
+*.rtf   diff=astextplain
+*.RTF   diff=astextplain
