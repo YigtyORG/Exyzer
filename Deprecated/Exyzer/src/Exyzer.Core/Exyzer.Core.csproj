@@ -12,7 +12,11 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-		<ProjectReference Include="../../lib/TakymLib/src/TakymLib/TakymLib.csproj" />
+		<!--
+			TODO: Exyzer を再び TakymLib リポジトリから分離させる場合は、TakymLib への参照を書き換える。
+			<ProjectReference Include="../../lib/TakymLib/src/TakymLib/TakymLib.csproj" />
+		-->
+		<ProjectReference Include="../../../../src/TakymLib/TakymLib.csproj" />
 		<None Update="ValueFormatter.csx">
 			<Generator>TextTemplatingFileGenerator</Generator>
 			<LastGenOutput>ValueFormatter.generated.cs</LastGenOutput>
